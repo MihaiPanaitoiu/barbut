@@ -1,7 +1,11 @@
 .main {
     text-align:center;
 }
+
 .player {
+    border: .2em solid black;
+    border-radius: 12px;
+    padding: 1em;
 	display:inline-block;
     margin: 5%;
 }
