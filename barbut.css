@@ -9,3 +9,7 @@
 	display:inline-block;
     margin: 5% 3%;
 }
+
+.winner {
+	color: green;
+}
