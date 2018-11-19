@@ -18,10 +18,6 @@ function zar(){
 	return Number(Math.floor(Math.random() * 6 + 1));
 }
 
-function announceWinner()
-{
-    console.log("Winner");
-}
 
 function resetRound()
 {
@@ -33,6 +29,12 @@ function resetRound()
 function round() {
 
     var roundOver = 0;
+    var p1Score = 0;
+    var p2Score = 0;
+    var zar1 = zar();
+    var zar2 = zar();
+    var zar3 = zar();
+    var zar4 = zar();
     
     buton1.addEventListener("click", function() {
         if (roundOver < 2) {
@@ -43,7 +45,8 @@ function round() {
         diceDsp12.textContent = zar2;
         roundOver++;
         if (roundOver >= 2)
-            announceWinner();
+            diceDsp11.classList.add("winner");
+            diceDsp12.classList.add("winner");
     })
 
     buton2.addEventListener("click", function() {
@@ -55,7 +58,8 @@ function round() {
         diceDsp22.textContent = zar4;
         roundOver++;
         if (roundOver >= 2)
-            announceWinner();
+            diceDsp21.classList.add("winner");
+            diceDsp22.classList.add("winner");
     })
 
 }
