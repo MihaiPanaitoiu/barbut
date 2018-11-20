@@ -24,6 +24,10 @@ function resetRound()
 {
     console.log("Round over");
     roundOver = 0;
+    buton1.disabled = false;
+    buton2.disabled = false;
+    p1Score = 0;
+    p2Score = 0;
 }
 
 
@@ -40,10 +44,6 @@ function winner() {
         	console.log("egalitate");
         }
     }
-
-
-
-
 
     
     buton1.addEventListener("click", function() {
