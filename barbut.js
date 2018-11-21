@@ -32,84 +32,48 @@ function resetRound()
 
 
 function winner() {
-	    if (roundOver === 2 && p1Score > p2Score) {
-            diceDsp11.classList.add("winner");
-            diceDsp12.classList.add("winner");
-        }
-        if (roundOver === 2 && p1Score < p2Score) {
-        	diceDsp21.classList.add("winner");
-            diceDsp22.classList.add("winner");
-        }
-        if (roundOver === 2 && p1Score === p2Score) {
-        	console.log("egalitate");
-        }
+    if (roundOver === 2 && p1Score > p2Score) {
+        diceDsp11.classList.add("winner");
+        diceDsp12.classList.add("winner");
+    }
+    if (roundOver === 2 && p1Score < p2Score) {
+        diceDsp21.classList.add("winner");
+        diceDsp22.classList.add("winner");
+    }
+    if (roundOver === 2 && p1Score === p2Score) {
+        console.log("egalitate");
+    }
+}
+
+
+buton1.addEventListener("click", function() {
+    if (roundOver < 2) {
+        p1Score += zar1 + zar2;
+        buton1.disabled = true;
+    }
+    diceDsp11.textContent = zar1;
+    diceDsp12.textContent = zar2;
+    roundOver++;
+
+    if (buton1.disabled && buton2.disabled) {
+        winner();
+        resetRound()
     }
 
-    
-    buton1.addEventListener("click", function() {
-        if (roundOver < 2) {
-            p1Score += zar1 + zar2;
-            buton1.disabled = true;
-        }
-        diceDsp11.textContent = zar1;
-        diceDsp12.textContent = zar2;
-        roundOver++;
+})
 
-        if (buton1.disabled && buton2.disabled) {
-		winner();
+buton2.addEventListener("click", function() {
+    if (roundOver < 2) {
+        p2Score += zar3 + zar4;
+        buton2.disabled = true;
+    }
+    diceDsp21.textContent = zar3;
+    diceDsp22.textContent = zar4;
+    roundOver++;
 
-		}
-		if(buton1.disabled && buton2.disabled) {
-		resetRound()
-		}
+    if (buton1.disabled && buton2.disabled) {
+        winner();
+        resetRound()
+    }
 
-    })
-
-    buton2.addEventListener("click", function() {
-        if (roundOver < 2) {
-            p2Score += zar3 + zar4;
-            buton2.disabled = true;
-        }
-        diceDsp21.textContent = zar3;
-        diceDsp22.textContent = zar4;
-        roundOver++;
-        if (buton1.disabled && buton2.disabled) {
-		winner();
-		}
-		if(buton1.disabled && buton2.disabled) {
-		resetRound()
-		}
-
-    })
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
