@@ -17,12 +17,21 @@ function zar(){
 
 function resetRound()
 {
-    console.log("Round over");
+    console.log("Reseting round...");
     roundOver = 0;
     buton1.disabled = false;
     buton2.disabled = false;
     p1Score = 0;
     p2Score = 0;
+}
+
+
+function resetWinner()
+{
+    diceDsp11.classList.remove("winner");
+    diceDsp12.classList.remove("winner");
+    diceDsp21.classList.remove("winner");
+    diceDsp22.classList.remove("winner");
 }
 
 
@@ -44,6 +53,7 @@ function winner() {
 
 
 buton1.addEventListener("click", function() {
+    resetWinner();
     if (roundOver < 2) {
         zar1 = zar();
         zar2 = zar();
@@ -61,6 +71,7 @@ buton1.addEventListener("click", function() {
 })
 
 buton2.addEventListener("click", function() {
+    resetWinner();
     if (roundOver < 2) {
         zar3 = zar();
         zar4 = zar();
