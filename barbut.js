@@ -1,3 +1,5 @@
+/* Copyright (C) 2018, 2019 Mihai Bogdan Panaițoiu */
+
 var diceDsp11 = document.querySelector("#span1");
 var diceDsp12 = document.querySelector("#span2");
 var diceDsp21 = document.querySelector("#span3");
