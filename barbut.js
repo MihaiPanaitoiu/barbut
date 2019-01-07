@@ -8,11 +8,6 @@ var buton2 = document.querySelector("#button2");
 var p1Score = 0;
 var p2Score = 0;
 var roundOver = 0;
-var zar1 = zar();
-var zar2 = zar();
-var zar3 = zar();
-var zar4 = zar();
-
 
 
 function zar(){
@@ -35,10 +30,12 @@ function winner() {
     if (roundOver === 2 && p1Score > p2Score) {
         diceDsp11.classList.add("winner");
         diceDsp12.classList.add("winner");
+        console.log("player1 wins")
     }
     if (roundOver === 2 && p1Score < p2Score) {
         diceDsp21.classList.add("winner");
         diceDsp22.classList.add("winner");
+        console.log("player2 wins")
     }
     if (roundOver === 2 && p1Score === p2Score) {
         console.log("egalitate");
@@ -48,6 +45,8 @@ function winner() {
 
 buton1.addEventListener("click", function() {
     if (roundOver < 2) {
+        zar1 = zar();
+        zar2 = zar();
         p1Score += zar1 + zar2;
         buton1.disabled = true;
     }
@@ -59,11 +58,12 @@ buton1.addEventListener("click", function() {
         winner();
         resetRound()
     }
-
 })
 
 buton2.addEventListener("click", function() {
     if (roundOver < 2) {
+        zar3 = zar();
+        zar4 = zar();
         p2Score += zar3 + zar4;
         buton2.disabled = true;
     }
@@ -75,5 +75,4 @@ buton2.addEventListener("click", function() {
         winner();
         resetRound()
     }
-
 })
