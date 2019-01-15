@@ -11,5 +11,16 @@
 }
 
 .winner {
-	color: green;
+	background-color: #16EA19;
+}
+
+.draw {
+	background-color: #C1C0B0;
+}
+
+.scorekeeper {
+	border: .2em solid black;
+	border-radius: 12px;
+	padding: 1em;
+	
 }

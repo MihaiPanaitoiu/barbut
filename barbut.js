@@ -6,6 +6,8 @@ var diceDsp21 = document.querySelector("#span3");
 var diceDsp22 = document.querySelector("#span4");
 var buton1 = document.querySelector("#button1");
 var buton2 = document.querySelector("#button2");
+var player = document.querySelector("#player");
+var playerx = document.querySelector("#playerx")
 
 var p1Score = 0;
 var p2Score = 0;
@@ -34,6 +36,10 @@ function resetWinner()
     diceDsp12.classList.remove("winner");
     diceDsp21.classList.remove("winner");
     diceDsp22.classList.remove("winner");
+    playerz.classList.remove("winner");
+    playerx.classList.remove("winner");
+    playerz.classList.remove("draw");
+    playerx.classList.remove("draw");
 }
 
 
@@ -41,14 +47,18 @@ function winner() {
     if (roundOver === 2 && p1Score > p2Score) {
         diceDsp11.classList.add("winner");
         diceDsp12.classList.add("winner");
+        playerz.classList.add("winner");
         console.log("player1 wins")
     }
     if (roundOver === 2 && p1Score < p2Score) {
         diceDsp21.classList.add("winner");
         diceDsp22.classList.add("winner");
+        playerx.classList.add("winner");
         console.log("player2 wins")
     }
     if (roundOver === 2 && p1Score === p2Score) {
+    	playerx.classList.add("draw");
+    	playerz.classList.add("draw");
         console.log("egalitate");
     }
 }
